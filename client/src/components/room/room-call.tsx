@@ -1,4 +1,10 @@
-import React, { MutableRefObject, useEffect, useMemo, useRef, useState } from 'react';
+import React, {
+  MutableRefObject,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import './room-call.css';
 import useRTCSocket from '../../hooks/use-rtc-socket';
 import RoomCallControls from './room-call-controls';
@@ -16,7 +22,6 @@ const RoomCall: React.FC<{
   url: string;
   speaker: string;
   mediaStream: MediaStream | undefined;
-
 }> = ({ url, mediaStream, speaker }) => {
   const urlMemo = useMemo(() => url, [url]);
   const [peerConnection, _] = useState<RTCPeerConnection>(
@@ -77,7 +82,6 @@ const RoomCall: React.FC<{
       senders.forEach((sender) => peerConnection.removeTrack(sender));
     }
     mediaStream?.getTracks().forEach((track) => {
-
       peerConnection.addTrack(track, mediaStream);
     });
 
@@ -142,6 +146,22 @@ const RoomCall: React.FC<{
     setOtherVideoLoaded(true);
   };
 
+  const toggleVideo = () => {
+    if (mediaStream && mediaStream.getVideoTracks().length > 0) {
+      const prev = mediaStream.getVideoTracks()[0].enabled;
+      console.log(prev);
+      mediaStream.getVideoTracks()[0].enabled = !prev;
+    }
+  };
+
+  const toggleAudio = () => {
+    if (mediaStream && mediaStream.getAudioTracks().length > 0) {
+      const prev = mediaStream.getAudioTracks()[0].enabled;
+      console.log(prev);
+      mediaStream.getAudioTracks()[0].enabled = !prev;
+    }
+  };
+
   // Also have to handle polling for summaries
   return (
     <div className="flex h-screen w-screen">
@@ -175,12 +195,15 @@ const RoomCall: React.FC<{
               ></video>
             </div>
             <div className="flex flex-col w-full h-36 justify-center items-center bg-background-black-call">
-              <RoomCallControls />
+              <RoomCallControls
+                toggleAudio={toggleAudio}
+                toggleVideo={toggleVideo}
+              />
             </div>
           </main>
-            <nav className="max-w-[500px] w-full h-full">
-              <RoomLiveMenu url={urlMemo} speaker={speaker}/>
-            </nav>
+          <nav className="max-w-[500px] w-full h-full">
+            <RoomLiveMenu url={urlMemo} speaker={speaker} />
+          </nav>
         </div>
       </div>
     </div>

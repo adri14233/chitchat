@@ -14,7 +14,7 @@ const useLiveMenuSocket = () => {
     handleEdit: (id: string, status: string) => void,
     handleChat: (message: ChatMessage) => void
   ) => {
-    const ws = new WebSocket(`ws://10.10.22.212:3004/?room=${url}`);
+    const ws = new WebSocket(`ws://localhost:3004/?room=${url}`);
     ws.addEventListener('open', () => setSocketStatus(WebSocket.OPEN));
     ws.addEventListener('close', () => setSocketStatus(WebSocket.CLOSED));
 

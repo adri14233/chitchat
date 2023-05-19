@@ -12,7 +12,7 @@ const useRTCSocket = () => {
     answerReceived: (answer: string) => void,
     candidateReceived: (candidate: string) => void
   ) => {
-    const baseUrl = `ws://10.10.22.212:3003/?room=${url}`;
+    const baseUrl = `ws://localhost:3003/?room=${url}`;
     const ws = new WebSocket(baseUrl);
 
     ws.addEventListener('open', () => setStatus(WebSocket.OPEN));
