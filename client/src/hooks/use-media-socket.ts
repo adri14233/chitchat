@@ -5,7 +5,7 @@ const useMediaSocket = () => {
     start: (socket: WebSocket) => void,
     stop: () => void
   ) => {
-    const baseUrl = `ws://10.10.22.212:3002/?room=${url}&speaker=${speaker}`;
+    const baseUrl = `ws://localhost:3002/?room=${url}&speaker=${speaker}`;
     const ws = new WebSocket(baseUrl);
 
     ws.addEventListener('message', (ev: MessageEvent) => {

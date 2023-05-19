@@ -1,5 +1,5 @@
 class ApiService {
-  baseUrl: string = 'http://10.10.22.212:3001/';
+  baseUrl: string = 'http://localhost:3001/';
 
   async fetch<T>(
     endpoint: string,
