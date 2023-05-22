@@ -35,11 +35,11 @@ npm install
 - Bcrypt
 
 # Developers
-- Èric Jordan Bernardo - [Github](https://github.com/e-jordan-b) - LinkedIn
-- Adrian Labernia - GitHub - LinkedIn
-- Federico Giordani - GitHub - LinkedIn
-- Leon Gieser - GitHub - LinkedIn
-- Leonor Aidos - GitHub - LinkedIn
+- Èric Jordan Bernardo - [Github](https://github.com/e-jordan-b) - [LinkedIn](https://www.linkedin.com/in/eric-jordan-bernardo/)
+- Adrian Labernia - [GitHub](https://github.com/adri14233) - [LinkedIn](https://www.linkedin.com/in/adrianlabernia/)
+- Federico Giordani - [GitHub](https://github.com/fredgrd) - [LinkedIn](https://www.linkedin.com/in/fedgrd/)
+- Leon Gieser - [GitHub](https://github.com/leongieser) - [LinkedIn](https://www.linkedin.com/in/leon-gieser/)
+- Leonor Aidos - [GitHub](https://github.com/leonoraidos) - [LinkedIn](https://www.linkedin.com/in/leonoraidos/)
 
 
 
